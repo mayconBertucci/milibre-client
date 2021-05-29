@@ -1,0 +1,117 @@
+.bookContainer {
+    min-height: calc(100vh - 148px);
+    display: flex;
+    justify-content: center;
+
+    .wrapper {
+        background: #fff;
+        max-width: 940px;
+        width: 90%;
+        padding: 40px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+
+        .bookData {
+            display: flex;
+            
+            img {
+                margin-top: 2px;
+                width: 10rem;
+                border-radius: 10px;
+            }
+
+            .bookAside {
+                min-width: 170px;
+
+                .notes {
+                    margin: 15px 0;
+                    width: 90%;
+                    text-align: left;
+                    font-size: 1.2rem;
+                }
+
+                .notes {
+                    width: 85%;
+                    margin: auto;
+
+                    .stars {
+                        margin-right: 4px;
+                    }
+        
+                    .bookStarsNotActiv,
+                    .userStarsNotActiv {
+                        opacity: .8;
+                        position: relative;
+                        width: 140px;
+                    }
+        
+                    .bookStarsActiv,
+                    .userStarsActiv {
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        color: #00AC96;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: clip;
+                    }
+                }
+
+                .bookExchange {
+                    margin-top: 50px;
+                    padding: 10px;
+                    border-radius: 6px;
+                    background: #612f91;
+                    border:none;
+                    color: #fff;
+                    justify-self: flex-end;
+                    align-self: flex-end;
+                    right: 5px;
+                    bottom: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+    
+            }
+
+            .bookDescription {
+                margin-left: 50px;
+
+                h1 {
+                    text-align: center;
+                }
+
+                .tableDescription {
+                    margin: 15px 0;
+                    width: 60%;
+                    font-size: 1.2rem;
+                    margin: auto;
+                }
+
+                .tableDescription {
+                    margin: 20px auto;
+                    font-size: 1rem;
+                    font-weight: 100;
+                    width: 70%;
+
+                    td {
+                        text-align: center;
+                        width: 40px;
+                    }
+        
+                    .icons {
+                        font-size: 2rem;
+                        color: #612f91;
+                    }
+                }
+
+                .description {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}

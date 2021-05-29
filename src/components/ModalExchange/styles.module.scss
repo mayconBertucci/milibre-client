@@ -1,0 +1,96 @@
+.modalContainer {
+    background: rgba($color: #000000, $alpha: .5);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+    position: fixed;
+
+    display: none;
+
+    &.on {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        width: 60%;
+        height: 520px;
+        max-width: 650px;
+        background: #fff;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    
+        form {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+
+            h2 {
+                text-align: center;
+            }
+            
+            label {
+               align-self: flex-start;
+               margin: 20px 0 5px 0px;
+               font-weight: 600;
+            }
+
+            textarea, input {
+                margin-top: 0;
+                width: 95%;
+                max-width: 600px;
+                border-radius: 4px;
+                background: #F7F8FB;
+                font-size: 1rem;
+                padding: 15px;
+                outline: none;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                border-bottom: 2px solid rgb(0 0 0 / 20%);
+            }
+
+            .buttonsActions {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 20px;
+                width: 100%;
+                
+                .cancelar, .enviar {
+                    color: #fff;
+                    border: none;
+                    padding: 8px;
+                    border-radius: 5px;
+                    margin: 4px 0 0 8px;
+                    cursor: pointer;
+                }
+        
+                .cancelar {
+                    background: #ee5564;
+                    width: 6rem;
+                }
+    
+                .cancelar:hover {
+                    opacity: .7;
+                }
+        
+                .enviar {
+                    background: #34325E;
+                    color: #fff;
+                    width: 5rem;
+                }
+
+                .enviar:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}

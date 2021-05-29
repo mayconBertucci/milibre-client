@@ -1,0 +1,150 @@
+.searchBook {
+    width: 80%;
+    max-width: 650px;
+    text-align: center;
+    margin-top: 30px;
+
+    input {
+        width: calc(100% - 50px);
+        height: 40px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        outline: none;
+        padding: 10px;
+        border: none;
+        margin: 10px 0;
+        opacity: .8;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        background: var(--green);
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+
+    button:hover {
+        opacity: .8;
+    }
+
+    @media screen and (max-width: 1096px) {
+        width: 90%;
+    }
+}
+
+.cardsBookContainer {
+    min-height: calc(100vh - 355px);
+
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin: 40px auto;
+
+    .card {
+        box-shadow: 0 12px 16px rgb(0 0 0 / 10%);
+        text-align: center;
+        border-radius: 10px;
+        transition: all 0.25s;
+        background: #fff;
+        padding: 10px;
+        width: 50%;
+        min-width: 245px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+
+        position: relative;
+        .cardHeader {
+            padding: 10px 30px;
+        }
+
+        .photo {
+            width: 10rem;
+            border-radius: 6px;
+        }
+
+        .bookDescription, .notes {
+            margin: 15px auto;
+            width: 90%;
+            text-align: left;
+        }
+
+        .bookDescription {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: .8rem;
+            font-weight: 100;
+
+            td {
+                text-align: left;
+                padding-left: 15px;
+                font-size: 90%;
+            }
+
+            .icons {
+                font-size: 1.5rem;
+                color: #612f91;
+            }
+        }
+
+        .notes {
+            width: 80%;
+            margin: auto;
+
+            .stars {
+                font-size: .9rem; 
+                margin-right: 4px;
+            }
+
+            .bookStarsNotActiv,
+            .userStarsNotActiv {
+                opacity: .8;
+                position: relative;
+                width: 111px;
+            }
+
+            .bookStarsActiv,
+            .userStarsActiv {
+                top: 0;
+                left: 0;
+                position: absolute;
+                color: #00AC96;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+        }
+
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 12px rgb(0 0 0 / 30%);
+    }
+
+    @media screen and (max-width: 1096px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 840px) {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    @media screen and (max-width: 640px) {
+        grid-template-columns: repeat(1, 1fr);
+        .card {
+            width: 70%;
+            margin: auto;
+        }
+    }
+
+}

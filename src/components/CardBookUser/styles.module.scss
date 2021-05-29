@@ -1,0 +1,99 @@
+.cardsBookContainer {    
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 16px auto;
+
+    .card {
+        box-shadow: 0 12px 16px rgb(0 0 0 / 10%);
+        text-align: center;
+        border-radius: 10px;
+        transition: all 0.25s;
+        background: #fff;
+        padding: 10px;
+        height: 90%;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+
+        position: relative;
+        .cardHeader {
+            padding: 10px 30px;
+        }
+
+        .photo {
+            width: 6rem;
+            border-radius: 6px;
+        }
+
+        h4 {
+            margin: 6px 0;
+        }
+
+        .bookDescription, .notes {
+            margin: 15px auto;
+            width: 90%;
+            text-align: left;
+        }
+
+        .bookDescription {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: .8rem;
+            font-weight: 100;
+
+            td {
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .icons {
+                font-size: 1.5rem;
+                color: #612f91;
+            }
+        }
+
+        .notes {
+            width: 113px;
+            margin: auto;
+
+            .stars {
+                font-size: .9rem; 
+                margin-right: 4px;
+            }
+
+            .bookStarsNotActiv {
+                opacity: .8;
+                position: relative;
+            }
+
+            .bookStarsActiv {
+                top: 0;
+                left: 0;
+                position: absolute;
+                color: #00AC96;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+        }
+
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 12px rgb(0 0 0 / 30%);
+    }
+
+    @media screen and (max-width: 1096px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 440px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
