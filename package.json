@@ -2,11 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3333",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start --port 3000"
+    "start": "next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
