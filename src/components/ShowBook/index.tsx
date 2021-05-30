@@ -38,7 +38,7 @@ export default function ShowBook() {
     const userContext = useContext(UserContext);
     
     const getData = async () => {
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/books/${localStorage.getItem('book')}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books/${localStorage.getItem('book')}`, {
             method: 'GET',
         });
     
