@@ -25,7 +25,7 @@ export function LoginForm() {
         e.preventDefault();
         
         if (data) {
-            const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/auth`, {
+            const response = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/auth`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

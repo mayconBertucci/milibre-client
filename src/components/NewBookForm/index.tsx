@@ -109,7 +109,7 @@ export default function NewBookForm() {
         const formData = new FormData();
         formData.append('file', e.currentTarget.files[0]);
 
-        const responseBook = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/upload/`, {
+        const responseBook = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/upload/`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

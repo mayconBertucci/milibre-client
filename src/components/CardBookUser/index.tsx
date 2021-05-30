@@ -31,7 +31,7 @@ export function CardBookUser() {
     const router = useRouter();
 
     const getData = async () => {
-        const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/books-user/${userContext.user.id}`, {
+        const response = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/books-user/${userContext.user.id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

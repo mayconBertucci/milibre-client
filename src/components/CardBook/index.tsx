@@ -32,7 +32,7 @@ export function CardBook() {
     const router = useRouter();
 
     const getData = async () => {
-        const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
+        const response = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
             method: 'GET',
         });
 
