@@ -45,7 +45,7 @@ export function CardBook() {
         
         searchData.setSearch(e.currentTarget.value);
         if (e.currentTarget.value.length > 0) {
-            const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/books-search/${e.currentTarget.value}`, {
+            const response = await fetch(`https://${process.env.NEXT_PUBLIC_BASE_URL}/books-search/${e.currentTarget.value}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
