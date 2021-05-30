@@ -32,7 +32,7 @@ export function CardBook() {
     const router = useRouter();
 
     const getData = async () => {
-        const response = await fetch('http://localhost:3333/books', {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/books`, {
             method: 'GET',
         });
 
@@ -45,7 +45,7 @@ export function CardBook() {
         
         searchData.setSearch(e.currentTarget.value);
         if (e.currentTarget.value.length > 0) {
-            const response = await fetch(`http://localhost:3333/books-search/${e.currentTarget.value}`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/books-search/${e.currentTarget.value}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

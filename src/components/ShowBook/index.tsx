@@ -38,7 +38,7 @@ export default function ShowBook() {
     const userContext = useContext(UserContext);
     
     const getData = async () => {
-        const response = await fetch(`http://localhost:3333/books/${localStorage.getItem('book')}`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/books/${localStorage.getItem('book')}`, {
             method: 'GET',
         });
     
