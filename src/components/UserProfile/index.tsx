@@ -21,7 +21,7 @@ export default function UserProfile() {
         const formData = new FormData();
         formData.append('file', e.currentTarget.files[0]);
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/upload/${userContext.user.id}`, {
+        const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/upload/${userContext.user.id}`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

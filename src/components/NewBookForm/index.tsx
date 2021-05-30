@@ -109,7 +109,7 @@ export default function NewBookForm() {
         const formData = new FormData();
         formData.append('file', e.currentTarget.files[0]);
 
-        const responseBook = await fetch(`${process.env.REACT_APP_BASE_URL}/upload/`, {
+        const responseBook = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/upload/`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -123,7 +123,7 @@ export default function NewBookForm() {
     const onSubmit = async (e: FormEvent<HTMLInputElement>) => {
         e.preventDefault();
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/books`, {
+        const response = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -133,13 +133,13 @@ export default function NewBookForm() {
         });
         const parsedRes = await response.json();
 
-        const responseUser = await fetch(`${process.env.REACT_APP_BASE_URL}/user-num-books/${userContext.user.id}`, {
+        const responseUser = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/user-num-books/${userContext.user.id}`, {
             method: 'PATCH'
         });
         const parsedResUser = await responseUser.json();
 
         if(parsedResUser.num_books === 1) {
-            const responseUser = await fetch(`${process.env.REACT_APP_BASE_URL}/user-points/${userContext.user.id}`, {
+            const responseUser = await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/user-points/${userContext.user.id}`, {
                 method: 'PATCH',
             });
             const parsedResNumBooks = await responseUser.json();
