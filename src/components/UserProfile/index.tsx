@@ -35,10 +35,6 @@ export default function UserProfile() {
         localStorage.setItem('user', JSON.stringify(userContext.user));
         router.push('/profile');
     } 
-
-    useEffect(() => {
-        userContext.signIn(localStorage.getItem('user'));
-    }, []);
  
     return(
         <div className={styles.container}>
