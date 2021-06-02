@@ -30,7 +30,6 @@ export function CardBook() {
     const [data, setData] = useState<IBook[]>([]);
     const searchData = useContext(SearchDataContext);
     const router = useRouter();
-    console.log(process.env.NEXT_PUBLIC_ENVIRONMENT);
 
     const getData = async () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books`, {

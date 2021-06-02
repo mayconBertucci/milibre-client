@@ -134,9 +134,11 @@ export default function NewBookForm() {
         const parsedRes = await response.json();
 
         const responseUser = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/user-num-books/${userContext.user.id}`, {
-            method: 'PATCH'
+            method: 'PATCH',
         });
         const parsedResUser = await responseUser.json();
+        userContext.signIn(parsedResUser)
+        localStorage.setItem('user', JSON.stringify(parsedResUser));
 
         if(parsedResUser.num_books === 1) {
             const responseUser = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/user-points/${userContext.user.id}`, {
