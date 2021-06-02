@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
 
 import { UserContext } from '../../contexts/UserContext';
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faMapMarkerAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
@@ -35,6 +35,10 @@ export default function UserProfile() {
         localStorage.setItem('user', JSON.stringify(userContext.user));
         router.push('/profile');
     } 
+
+    useEffect(() => {
+        userContext.signIn(localStorage.getItem('user'));
+    }, []);
  
     return(
         <div className={styles.container}>
