@@ -40,10 +40,10 @@ export function Header() {
                 <div className={ showMenu ? `${styles.menuSection} ${styles.on}` : styles.menuSection }>
                     <nav>
                         <ul className={ styles.menu }>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/books">Libros</Link></li>
-                            <li><Link href="/forum">Forum</Link></li>
-                            <li><Link href="/chat">Chat</Link></li>
+                            <li onClick={handleMenuToggle}><Link href="/">Home</Link></li>
+                            <li onClick={handleMenuToggle}><Link href="/books">Libros</Link></li>
+                            <li onClick={handleMenuToggle}><Link href="/howIsWork">Como funciona</Link></li>
+                            <li onClick={handleMenuToggle}><Link href="/about">Sobre nosotros</Link></li>
                         </ul>
         
                         {(userContext.user === null)
@@ -58,8 +58,8 @@ export function Header() {
                                         <li><button className={styles.avatar} onClick={handleUserOptions} ><img src={userContext.user.photo !== null ? userContext.user.photo : "img/profile-avatar.svg"} alt="avatar" /></button></li>
                                     </ul>
                                     <ul className={showUserOptions ? `${styles.userOptions} ${styles.on}` : styles.userOptions} onBlur={handleUserOptions}>
-                                        <li><Link href="/profile">Ver Perfil</Link></li>
-                                        <li><a href="/" onClick={handleUserSection}>Salir</a></li>
+                                        <li onClick={handleMenuToggle}><Link href="/profile">Ver Perfil</Link></li>
+                                        <li onClick={handleUserSection}><a href="/">Salir</a></li>
                                     </ul>
                                 </div>
                             )

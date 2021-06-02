@@ -5,7 +5,7 @@ export default class extends Document {
         return (
             <Html>
                 <Head>
-            
+                
                 </Head>
                 <body>
                     <Main />

@@ -1,0 +1,26 @@
+.container {
+    min-height: calc(100vh - 148px);
+    max-width: 960px;
+    margin: auto;
+
+    h2 {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 700px;
+        align-items: center;
+        margin: 0 auto 40px auto;
+
+        img {
+            width: 15rem;
+        }
+
+        p {
+            width: 400px;
+        }
+    }
+}
