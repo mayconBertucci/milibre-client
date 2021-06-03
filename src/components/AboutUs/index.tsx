@@ -26,7 +26,7 @@ export function AboutUs() {
                 </div>
             </div>
             <p>
-                Mi Libre es un proyecto creado por dos estudiantes de Desarrollo Web que surge con el intuito de conectar usuarios para que puedan intercambiar libros que ya hayan leído. La idea es que los lectores puedan intercambiar libros, fomentar la lectura y libertad cultural.
+                Mi Libre es un proyecto creado por dos estudiantes de Desarrollo Web que surge con la finalidad de conectar usuarios para que puedan intercambiar libros que ya hayan leído. La idea es que los lectores puedan intercambiar libros, fomentar la lectura y libertad cultural.
             </p>
         </div>
     );

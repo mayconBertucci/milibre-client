@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <UserProvider>
         <UserRegProvider>
             <SearchDataProvider>
-            <ToastContainer />
+                <ToastContainer />
                 <Header />
                 <Component {...pageProps} />
                 <Footer />
