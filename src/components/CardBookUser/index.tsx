@@ -31,7 +31,7 @@ export function CardBookUser() {
     const router = useRouter();
 
     const getData = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books-user/${userContext.user.id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books-user/${userContext.user.id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

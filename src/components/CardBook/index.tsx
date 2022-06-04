@@ -32,7 +32,7 @@ export function CardBook() {
     const router = useRouter();
 
     const getData = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
             method: 'GET',
         });
 
@@ -45,7 +45,7 @@ export function CardBook() {
         
         searchData.setSearch(e.currentTarget.value);
         if (e.currentTarget.value.length > 0) {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books-search/${e.currentTarget.value}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books-search/${e.currentTarget.value}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
