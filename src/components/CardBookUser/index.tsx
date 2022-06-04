@@ -14,7 +14,7 @@ interface IUser {
 
 interface IBook {
     id: string,
-    titol: string,
+    title: string,
     author: string,
     isbn: string,
     year: Date,
@@ -65,7 +65,7 @@ export function CardBookUser() {
                             <img src={element.photo} alt="Imagen del libro" className={styles.photo} />
                             </div>
                             <div className={styles.carBody}>
-                                <h4>{element.titol}</h4>
+                                <h4>{element.title}</h4>
                                 <table className={styles.notes}>
                                     <thead></thead>
                                     <tbody>

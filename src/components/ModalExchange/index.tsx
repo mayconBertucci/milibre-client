@@ -24,7 +24,7 @@ export default function ModalExchange({ props }) {
                             
                             <label htmlFor="text">Texto</label>
                             <textarea placeholder="Texto" name="text" defaultValue={
-                                `¡Hola, tengo interese en el libro "${props.data.titol}"! ¿Lo intercambiamos?`
+                                `¡Hola, tengo interese en el libro "${props.data.title}"! ¿Lo intercambiamos?`
                             }/>
                             <label htmlFor="text">E-mail</label>
                             <input type="text" defaultValue={userContext.user.email}/>

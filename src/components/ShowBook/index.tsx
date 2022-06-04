@@ -19,7 +19,7 @@ interface IUser {
 
 interface IBook {
     id: string,
-    titol: string,
+    title: string,
     author: string,
     isbn: string,
     year: Date,
@@ -95,7 +95,7 @@ export default function ShowBook() {
                             )}
                         </div>
                         <div className={styles.bookDescription}>
-                            <h1>{data.titol}</h1>
+                            <h1>{data.title}</h1>
                            
                             <table className={styles.tableDescription}>
                                 <thead>

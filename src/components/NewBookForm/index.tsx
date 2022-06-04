@@ -29,7 +29,7 @@ interface IUser {
 
 interface IBook {
     id: string,
-    titol: string,
+    title: string,
     author: string,
     isbn: string,
     genre: string,
@@ -47,7 +47,7 @@ export default function NewBookForm() {
 
     const [data, setData] = useState<IBook>({
         id: '',
-        titol: '',
+        title: '',
         author: '',
         isbn: '',
         genre: '',
@@ -165,12 +165,12 @@ export default function NewBookForm() {
             <form method="POST" className={styles.wrapper}>
                 <input 
                     type="text"
-                    name="titol" 
+                    name="title" 
                     required 
                     placeholder="Nombre" 
                     className={!isValid ? `${styles.required}` : ''} 
                     onChange={(e) => {onChange(e), onSearchGoogle(e)}} 
-                    value={data !== undefined ? data.titol : ''}
+                    value={data !== undefined ? data.title : ''}
                 />
                 <div className={searchGoogleModal ? `${styles.searchGoogle}  ${styles.on}` : styles.searchGoogle }>
                     <ul>
@@ -178,7 +178,7 @@ export default function NewBookForm() {
                             return (
                                 <li key={uuid()} onClick={
                                     () => {
-                                        setData({...data, titol: element.volumeInfo.title, id: element.id});
+                                        setData({...data, title: element.volumeInfo.title, id: element.id});
                                         setSearchGoogleModal(false);
                                     }}>
                                     {element.volumeInfo.title}
