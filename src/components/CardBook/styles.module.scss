@@ -40,6 +40,7 @@
 
 .cardsBookContainer {
     min-height: calc(100vh - 355px);
+    max-width: 80%;
 
     display: grid;
     grid-gap: 20px;
@@ -55,7 +56,7 @@
         background: #fff;
         padding: 10px;
         width: 50%;
-        min-width: 245px;
+        min-width: 220px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -66,39 +67,33 @@
             padding: 10px 30px;
         }
 
+        h4 {
+            margin-bottom: 24px;
+        }
+
         .photo {
-            width: 10rem;
+            width: 6rem;
             border-radius: 6px;
         }
 
         .bookDescription, .notes {
-            margin: 15px auto;
+            margin: 6px;
             width: 90%;
             text-align: left;
         }
 
         .bookDescription {
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: .8rem;
-            font-weight: 100;
-
-            td {
-                text-align: left;
-                padding-left: 15px;
-                font-size: 90%;
-            }
+           display: flex;
+           justify-content: space-between;
+           font-size: .9rem;
 
             .icons {
-                font-size: 1.5rem;
+                font-size: 1.1rem;
                 color: #612f91;
             }
         }
 
         .notes {
-            width: 80%;
-            margin: auto;
-
             .stars {
                 font-size: .9rem; 
                 margin-right: 4px;

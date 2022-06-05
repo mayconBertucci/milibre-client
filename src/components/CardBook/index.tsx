@@ -22,7 +22,7 @@ interface IBook {
     genre: string,
     photo: string,
     book_status: string,
-    book_note: number, 
+    book_note: number,
     user: IUser
 }
 
@@ -38,11 +38,11 @@ export function CardBook() {
 
         const parsedRes = await response.json();
         setData(parsedRes);
-    } 
+    }
 
     const onChange = async (e: FormEvent<HTMLInputElement>) => {
         e.preventDefault();
-        
+
         searchData.setSearch(e.currentTarget.value);
         if (e.currentTarget.value.length > 0) {
             const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books-search/${e.currentTarget.value}`, {
@@ -62,7 +62,7 @@ export function CardBook() {
 
     const setBookId = (e, id: string) => {
         e.preventDefault();
-        
+
         localStorage.setItem('book', id);
         router.push('/book');
     }
@@ -74,7 +74,7 @@ export function CardBook() {
     useEffect(() => {
     }, [data]);
 
-    return(
+    return (
         <>
             <section className={styles.searchBook}>
                 <h2>Encuentra tu libro</h2>
@@ -84,30 +84,28 @@ export function CardBook() {
                 </form>
             </section>
             <div className={styles.cardsBookContainer}>
-                {data.length > 0 && data.map((element) => { 
-                    return(
+                {data.length > 0 && data.map((element) => {
+                    return (
                         <article className={styles.card} key={element.id} onClick={e => setBookId(e, element.id)}>
-                            <div className={styles.cardHearder}>
-                            <img src={element.photo} alt="Imagen del libro" className={styles.photo} />
+                            <div className={styles.cardHeader}>
+                                <img src={element.photo} alt="Imagen del libro" className={styles.photo} />
                             </div>
                             <div className={styles.carBody}>
                                 <h4>{element.title}</h4>
-                                <table className={styles.bookDescription}>
-                                    <thead>
-                                        <tr>
-                                            <th><FontAwesomeIcon icon={faUser} className={styles.icons} /></th>
-                                            <th><FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icons} /></th>
-                                            <th><FontAwesomeIcon icon={faBook} className={styles.icons} /></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{element.user.name}</td>
-                                            <td>{element.user.location}</td>
-                                            <td>{element.book_status}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                                <div className={styles.bookDescription}>
+                                    <FontAwesomeIcon icon={faUser} className={styles.icons} />
+                                    {element.user.name}
+                                </div>
+                                <div className={styles.bookDescription}>
+                                    <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icons} />
+                                    {element.user.location}
+                                </div>
+                                <div className={styles.bookDescription}>
+                                    <FontAwesomeIcon icon={faBook} className={styles.icons} />
+                                    {element.book_status}
+                                </div>
+
                                 <table className={styles.notes}>
                                     <thead></thead>
                                     <tbody>
@@ -136,7 +134,7 @@ export function CardBook() {
                         </article>
                     );
                 })}
-        </div>
+            </div>
         </>
     );
 }
