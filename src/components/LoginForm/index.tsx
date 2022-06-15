@@ -29,14 +29,14 @@ export function LoginForm() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `${localStorage.getItem('token')}`,
-                },
+                },                
                 body: JSON.stringify(data),
             });
 
             const parsedRes = await response.json()
+            
             if (parsedRes.user !== undefined) {
-                localStorage.setItem('token', JSON.stringify(parsedRes.token));
+                localStorage.setItem('token', parsedRes.token);
                 localStorage.setItem('user', JSON.stringify(parsedRes.user));
                 userContext.signIn(JSON.parse(localStorage.getItem('user')));
                 router.push('/');

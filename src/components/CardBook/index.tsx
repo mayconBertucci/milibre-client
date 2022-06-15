@@ -34,6 +34,9 @@ export function CardBook() {
     const getData = async () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_ENVIRONMENT === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_BASE_URL}/books`, {
             method: 'GET',
+            headers: {
+                'Authorization': localStorage.getItem('token'),
+            }
         });
 
         const parsedRes = await response.json();
